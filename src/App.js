@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Navbar from "./components/navbar";
+import Resetcss from "./Resetcss";
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        On Business Baby
-      </div>
+      <Resetcss />
+      <Navbar />
       <Switch>
         <Route path="/" exact></Route>
       </Switch>
