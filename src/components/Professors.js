@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import PageBody from "./styles/PageBody";
 
 export default function ExamBySubject() {
@@ -31,16 +30,3 @@ export default function ExamBySubject() {
         </PageBody>
     );
 }
-
-const Semester = styled.div`
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    h1 {
-        font-size: 20px;
-        margin-top: 20px;
-    }
-    a {
-        margin-left: 10px;
-    }
-`
