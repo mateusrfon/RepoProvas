@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import PageBody from "./styles/PageBody";
 import styled from "styled-components";
 
-export default function ExamsBySubject(props) {
+export default function ExamsByProfessor(props) {
     const { id } = useParams();
     const [categories, setCategories] = useState([]);
-    const [subject, setSubject] = useState();
+    const [professor, setProfessor] = useState();
     const [examsByCategory, setExamsByCategory] = useState({});
     
     useEffect(() => {
@@ -15,10 +15,10 @@ export default function ExamsBySubject(props) {
             const categories = await axios.get(`${process.env.REACT_APP_HOST}/categories`);
             setCategories(categories.data);
 
-            const subject = await axios.get(`${process.env.REACT_APP_HOST}/subject/${id}`);
-            setSubject(subject.data);
+            const professor = await axios.get(`${process.env.REACT_APP_HOST}/professor/${id}`);
+            setProfessor(professor.data);
 
-            const exams = subject.data.exams;
+            const exams = professor.data.exams;
             
             populateExamsByCategory(exams, categories.data);
         }
@@ -40,14 +40,14 @@ export default function ExamsBySubject(props) {
     
     return (
         <PageBody>
-            <h1>{subject?.name}:</h1>
+            <h1>{professor?.name}:</h1>
             {categories.map(category => {
                 return (
                     <div key={`category${category.id}`}>
                         <Category>{category.name}:</Category>
                         {examsByCategory[category.name]?.length > 0 
                             ? examsByCategory[category.name].map(exam => {
-                                return <a key={`exam${exam.id}`} href={exam.link}>{exam.name} - {exam.professor.name}</a> 
+                                return <a key={`exam${exam.id}`} href={exam.link}>{exam.name} - {exam.subject.name}</a> 
                             })
                             : 'Sem provas registradas'
                         }

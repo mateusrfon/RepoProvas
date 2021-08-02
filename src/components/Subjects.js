@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PageBody from "./styles/PageBody";
 
-export default function ExamBySubject() {
+export default function Subjects() {
     const [terms, setTerms] = useState([
         [],
         [],

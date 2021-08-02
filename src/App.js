@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import UploadExam from "./components/UploadExam";
 import Subjects from "./components/Subjects";
 import ExamsBySubject from "./components/ExamsBySubject";
+import Professors from "./components/Professors";
+import ExamsByProfessor from "./components/ExamsByProfessor";
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
         <Route path="/upload" exact component={UploadExam} />
         <Route path="/disciplinas" exact component={Subjects} />
         <Route path="/disciplina/:id" exact component={ExamsBySubject} />
-        <Route path="/professores" exact component={Home} />
-        <Route path="/professor/:id" exact component={Home} />
+        <Route path="/professores" exact component={Professors} />
+        <Route path="/professor/:id" exact component={ExamsByProfessor} />
       </Switch>
     </Router>
   );
