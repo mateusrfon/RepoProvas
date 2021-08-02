@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import PageBody from "./styles/PageBody";
 
 export default function ExamBySubject() {
-    const [subjects, setSubjects] = useState([]);
     const [terms, setTerms] = useState([
         [],
         [],
@@ -20,7 +20,6 @@ export default function ExamBySubject() {
         axios.get(`${process.env.REACT_APP_HOST}/subjects`)
         .then((req, res) => {
             const subjects = req.data;
-            setSubjects(subjects);
             const populateTerms = [...terms];
             for (let i = 0; i < subjects.length; i++) {
                 const selected = parseInt(subjects[i].term.name) - 1;
@@ -31,18 +30,19 @@ export default function ExamBySubject() {
         .catch(() => {
             alert('Não foi possível coletar as informações.')
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <PageBody>
-            {terms.map((item, index) => {
+            {terms.map((term, index) => {
                 return (
                     <>
-                        <div>{index + 1} semestre:</div>
-                        {item.map(item => {
+                        <Semester>{index + 1} semestre:</Semester>
+                        {term.map(subject => {
                             return (
-                                <Link to={`/disciplina/${item.id}`}>
-                                {item.name}: {item.exams.length === 1 ? '1 prova' : `${item.exams.length} provas`}
+                                <Link to={`/disciplina/${subject.id}`}>
+                                {subject.name}: {subject.exams.length === 1 ? '1 prova' : `${subject.exams.length} provas`}
                                 </Link>
                             )
                         })}
@@ -52,3 +52,7 @@ export default function ExamBySubject() {
         </PageBody>
     );
 }
+
+const Semester = styled.div`
+    margin-top: 20px;
+`
