@@ -26,6 +26,9 @@ export default function UploadExam() {
         axios.get(`${process.env.REACT_APP_HOST}/categories`)
         .then((req, res) => {
             setCategories(req.data);
+        })
+        .catch(() => {
+            alert('Não foi possível coletar as informações.')
         });
     }, []);
 
