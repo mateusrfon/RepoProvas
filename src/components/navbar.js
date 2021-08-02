@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
         <NavBar>
-            <button>Disciplinas</button>
-            <h1>RepoProvas</h1>
-            <button>Professores</button>
+            <Link to="/disciplinas" className="btn">Disciplinas</Link>
+            <Link to="/" className="logo">RepoProvas</Link>
+            <Link to="/professores" className="btn">Professores</Link>
         </NavBar>
     )
 }
@@ -23,11 +24,11 @@ const NavBar = styled.div`
     background-color: gray;
     box-shadow: 0 0 8px rgba(0,0,0,0.15);
     color: #fff;
-    h1 {
+    .logo {
         font-size: 40px;
         font-weight: bold;
     }
-    button {
+    .btn {
         font-family: 'Oldenburg', cursive;
         background: none;
         color: #fff;

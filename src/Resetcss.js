@@ -11,6 +11,10 @@ const Resetcss = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
     }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 `;
 
 export default Resetcss;
