@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Resetcss from "./Resetcss";
 
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import UploadExam from "./components/UploadExam";
 import Subjects from "./components/Subjects";

@@ -57,8 +57,9 @@ const Semester = styled.div`
     width: 250px;
     display: flex;
     flex-direction: column;
+    font-size: 15px;
     h1 {
-        font-size: 20px;
+        font-weight: bold;
         margin-top: 20px;
     }
     a {

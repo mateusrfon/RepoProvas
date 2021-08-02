@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageBody from "./styles/PageBody";
-import styled from "styled-components";
+import Category from "./styles/ExamStyle";
 
 export default function ExamsByProfessor(props) {
     const { id } = useParams();
@@ -43,21 +43,17 @@ export default function ExamsByProfessor(props) {
             <h1>{professor?.name}:</h1>
             {categories.map(category => {
                 return (
-                    <div key={`category${category.id}`}>
-                        <Category>{category.name}:</Category>
+                    <Category key={`categoryProf${category.id}`}>
+                        <div>{category.name}:</div>
                         {examsByCategory[category.name]?.length > 0 
                             ? examsByCategory[category.name].map(exam => {
-                                return <a key={`exam${exam.id}`} href={exam.link}>{exam.name} - {exam.subject.name}</a> 
+                                return <a key={`examProf${exam.id}`} href={exam.link}>{exam.name} - {exam.subject.name}</a> 
                             })
-                            : 'Sem provas registradas'
+                            : <p>(Sem provas registradas)</p>
                         }
-                    </div>
+                    </Category>
                 )
             })}
         </PageBody>
     );
 }
-
-const Category = styled.div`
-    margin-top: 20px;
-`;

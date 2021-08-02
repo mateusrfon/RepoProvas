@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import PageBody from "./styles/PageBody";
 
 export default function ExamBySubject() {
@@ -22,11 +23,23 @@ export default function ExamBySubject() {
         <PageBody>
             {professors.map(professor => {
                 return (
-                    <Link key={`professor${professor.id}`} to={`/professor/${professor.id}`}>
-                        {professor.name}: {professor.exams.length === 1 ? '1 prova' : `${professor.exams.length} provas`}
-                    </Link>
+                    <Professors>
+                        <Link key={`professor${professor.id}`} to={`/professor/${professor.id}`}>
+                            {professor.name} {professor.exams.length === 0 
+                                ? <p>(Sem provas registradas)</p>
+                                : professor.exams.length === 1 
+                                        ? <p>(1 prova)</p> 
+                                        : `(${professor.exams.length} provas)`}
+                        </Link>
+                    </Professors>
                 )
             })}
         </PageBody>
     );
 }
+
+const Professors = styled.div`
+    width: 250px;
+    margin-top: 20px;
+    font-size: 15px;
+`;
