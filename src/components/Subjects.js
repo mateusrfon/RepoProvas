@@ -37,16 +37,16 @@ export default function ExamBySubject() {
         <PageBody>
             {terms.map((term, index) => {
                 return (
-                    <>
-                        <Semester>{index + 1} semestre:</Semester>
+                    <Semester key={`term${index}`}>
+                        <h1>{index + 1} semestre:</h1>
                         {term.map(subject => {
                             return (
-                                <Link to={`/disciplina/${subject.id}`}>
-                                {subject.name}: {subject.exams.length === 1 ? '1 prova' : `${subject.exams.length} provas`}
+                                <Link key={`subject${subject.id}`} to={`/disciplina/${subject.id}`}>
+                                    {subject.name}: {subject.exams.length === 1 ? '1 prova' : `${subject.exams.length} provas`}
                                 </Link>
                             )
                         })}
-                    </>
+                    </Semester>
                 )
             })}
         </PageBody>
@@ -54,5 +54,14 @@ export default function ExamBySubject() {
 }
 
 const Semester = styled.div`
-    margin-top: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    a {
+        margin-left: 10px;
+    }
 `

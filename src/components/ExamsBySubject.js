@@ -37,17 +37,17 @@ export default function ExamsBySubject(props) {
         }
         setExamsByCategory(obj);
     }
-    console.log(examsByCategory)
+    
     return (
         <PageBody>
             <h1>{subject?.name}:</h1>
             {categories.map(category => {
                 return (
-                    <div key={category.id}>
+                    <div key={`category${category.id}`}>
                         <Category>{category.name}:</Category>
                         {examsByCategory[category.name]?.length > 0 
                         ? examsByCategory[category.name].map(exam => { 
-                            return <a key={exam.id} href={exam.link}>{exam.name} - {exam.professor.name}</a> 
+                            return <a key={`exam${exam.id}`} href={exam.link}>{exam.name} - {exam.professor.name}</a> 
                         })
                         : 'Sem provas registradas'
                         }
