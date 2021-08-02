@@ -87,10 +87,17 @@ export default function UploadExam() {
 const Form = styled.form`
     display: flex;
     flex-direction: column;
+    button {
+        height: 50px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #808080;
+        box-shadow: 0 0 5px black;
+    }
 `;
 
 const Input = styled.input`
-    border: 1px solid black;
+    box-shadow: 0 0 5px black;
     border-radius: 5px;
     height: 30px;
     width: 250px;
@@ -100,7 +107,7 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-    border: 1px solid black;
+    box-shadow: 0 0 5px black;
     border-radius: 5px;
     height: 30px;
     width: 250px;
