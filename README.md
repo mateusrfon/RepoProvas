@@ -1,5 +1,4 @@
-#### You can check this project deployed: https://repo-provas-front-rho.vercel.app/
-(The server take a few seconds to go online, if the required info is not appearing please wait a moment and then F5)
+#### You can check this project deployed: https://repo-provas-front-rho.vercel.app/ (The server take a few seconds to go online, if the required info is not appearing please wait a moment and then F5)
 
 ## 📕 Summary
 
