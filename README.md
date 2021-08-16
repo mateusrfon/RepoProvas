@@ -39,5 +39,3 @@ Installs all dependencies
 
 Runs the app in the development mode.\
 If it doesn't start automaticaly, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## You can check this project deployed at https://repo-provas-front-rho.vercel.app/
