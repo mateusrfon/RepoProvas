@@ -1,4 +1,4 @@
-#### You can check this project deployed: https://repo-provas-front-rho.vercel.app/ (The server take a few seconds to go online, if the required info is not appearing please wait a moment and then refresh the page)
+#### You can check this project deployed: https://repo-provas-front-rho.vercel.app/ <br/> (The server take a few seconds to go online, if the required info is not appearing please wait a moment and then refresh the page)
 
 ## 📕 Summary
 
@@ -28,8 +28,8 @@
 
 *API required (go to https://github.com/mateusrfon/repoprovas-api and follow the instructions).
 
-Clone this repo with [git clone https://github.com/mateusrfon/repoprovas.git] on a terminal <br/>
-Go to the directory with [cd repoprovas] and then you can run:
+Clone this repo with 'git clone https://github.com/mateusrfon/repoprovas.git' on a terminal <br/>
+Go to the directory with 'cd repoprovas' and then you can run:
 
 ### `npm i`
 Installs all dependencies
