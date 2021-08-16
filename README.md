@@ -28,7 +28,7 @@
 
 *API required (go to https://github.com/mateusrfon/repoprovas-api and follow the instructions).
 
-Clone this repo with [git clone https://github.com/mateusrfon/repoprovas.git] on a terminal
+Clone this repo with [git clone https://github.com/mateusrfon/repoprovas.git] on a terminal <br/>
 Go to the directory with [cd repoprovas] and then you can run:
 
 ### `npm i`
